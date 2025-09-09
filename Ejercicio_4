@@ -1,0 +1,19 @@
+def calcular_edades(edad_juan):
+    
+    alberto = (2/3) * edad_juan
+    ana = (4/3) * edad_juan
+    
+    mama = edad_juan + alberto + ana
+
+    return {
+        "Juan": edad_juan,
+        "Alberto": alberto,
+        "Ana": ana,
+        "Mamá": mama
+    }
+
+
+edades = calcular_edades(18)
+
+for persona, edad in edades.items():
+    print(f"{persona}: {edad:.0f} años")

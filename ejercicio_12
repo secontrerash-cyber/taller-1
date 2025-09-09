@@ -1,0 +1,17 @@
+def calcular_salario(horas=48, valor_hora=5000, porcentaje_retencion=12.5):
+  
+    salario_bruto = horas * valor_hora
+    
+    retencion = (porcentaje_retencion / 100) * salario_bruto
+    salario_neto = salario_bruto - retencion
+    
+    return {
+        "Salario Bruto": salario_bruto,
+        "Retención en la Fuente": retencion,
+        "Salario Neto": salario_neto
+    }
+
+resultado = calcular_salario()
+
+for concepto, valor in resultado.items():
+    print(f"{concepto}: ${valor:,.0f}")
