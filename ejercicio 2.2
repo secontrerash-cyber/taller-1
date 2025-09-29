@@ -1,0 +1,40 @@
+class Planeta:
+  def __init__(self, nombre, cantidad_satelites, masa, volumen, diametro, distancia_al_sol, tipo_de_planeta, observable):
+    self.nombre = nombre
+    self.cantidad_satelites = cantidad_satelites
+    self.masa = masa
+    self.volumen = volumen
+    self.diametro = diametro
+    self.distancia_al_sol = distancia_al_sol
+    self.tipo_de_planeta = tipo_de_planeta
+    self.observable = observable
+
+  def imprimir(self):
+    print(f"Tipo de planeta: {self.nombre}")
+    print(f"Cantidad de satelites: {self.cantidad_satelites}")
+    print(f"Masa del planeta: {self.masa}")
+    print(f"Volúmen del planeta: {self.volumen}")
+    print(f"Diámetro del planeta: {self.diametro}")
+    print(f"Distancia al sol: {self.distancia_al_sol}")
+    print(f"Tipo de planeta: {self.tipo_de_planeta}")
+    print(f"¿Es observable?: {self.observable}")
+    print(f"Densidad de {self.nombre}: {self.calcular_densidad()}")
+    print(f"¿Es {self.nombre} un planeta exterior?: {self.es_planeta_exterior()}")
+    print()
+
+  def calcular_densidad(self):
+    densidad = float(self.masa/self.volumen)
+    return densidad
+
+  def es_planeta_exterior(self):
+    limite = 149597870 * 3.4
+    if self.distancia_al_sol > limite:
+      return True
+    else:
+      return False
+
+tipo_de_planeta = ["Gaseoso", "Terreste", "Enano"]
+p1 = Planeta("Tierra", 1, 5.9736E24, 1.08321E12, 12742, 150000000, tipo_de_planeta[1], True)
+p1.imprimir()
+
+p2 = Planeta("Júpiter", 79, 1.899E27, 1.4313E15, 139820, 750000000, tipo_de_planeta[0], True)
